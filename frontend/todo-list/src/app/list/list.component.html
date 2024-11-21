@@ -1,0 +1,22 @@
+<div class="task-list">
+    <h2>Lista de Tarefas</h2>
+  
+    <!-- Formulário para adicionar nova tarefa -->
+    <form (submit)="addTask(taskTitle.value, taskDescription.value, $event)">
+      <input type="text" #taskTitle placeholder="Título" required />
+      <textarea #taskDescription placeholder="Descrição" required></textarea>
+      <button type="submit">Adicionar Tarefa</button>
+    </form>
+  
+    <!-- Lista de tarefas -->
+    <ul>
+      <li *ngFor="let task of tasks">
+        <span>{{ task.title }} - {{ task.description }}</span>
+  
+        <!-- Botões para editar e excluir -->
+        <button (click)="editTask(task.id)">Editar</button>
+        <button (click)="deleteTask(task.id)">Excluir</button>
+      </li>
+    </ul>
+  </div>
+  
