@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 import { TaskService } from '../services/task.service';
 
 @Component({
-  selector: 'app-list',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+    selector: 'app-list',
+    imports: [CommonModule],
+    templateUrl: './list.component.html',
+    styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
   tasks: { id: number, title: string, description: string }[] = [];
